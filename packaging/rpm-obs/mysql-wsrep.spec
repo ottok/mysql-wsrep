@@ -33,9 +33,9 @@ Name:           mysql-wsrep
 Summary:        Server part of MySQL WSREP (Galera) Server
 License:        SUSE-GPL-2.0-with-FLOSS-exception
 Group:          Productivity/Databases/Servers
-Version:        5.6.20
+Version:        5.6.21
 Release:        0
-%define srv_vers 5.6.20
+%define srv_vers 5.6.21
 Url:            http://www.mysql.com
 Source:         mysql-wsrep-%{version}.tar.gz
 Source2:        baselibs.conf
@@ -328,7 +328,7 @@ advanced user.  They should be used with caution.
 %endif
 
 %prep
-%setup -q -n mysql-wsrep-5.6 -D
+%setup -q
 cp %_sourcedir/suse-test-run .
 # remove unneeded manpages ('make install' basically installs everything under
 # man/*)
