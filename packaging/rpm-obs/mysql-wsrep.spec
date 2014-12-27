@@ -451,7 +451,6 @@ fi
 #/usr/share/mysql/*.ini
 /usr/share/mysql/wsrep_*
 /usr/share/%{name}/*.sql
-%ghost %dir %attr(755,mysql,mysql)/var/run/mysql
 %dir %{_libdir}/mysql
 %{_libdir}/mysql/mysqld.sym
 %config /etc/sysconfig/SuSEfirewall2.d/services/mysql

@@ -18,7 +18,7 @@ rm -f %buildroot%_libdir/mysql/*.a %buildroot%_libdir/mysql/*.la
 rm -f %buildroot%_libdir/mysql/plugin/*a
 # XXX: package these? The ndb tools are linked statically atm
 rm -f %buildroot%_libdir/mysql/libndbclient.*
-rm -f %{buildroot}/usr/share/mysql-test/mysql-test-run  
+rm -f %{buildroot}/usr/share/mysql-test/mysql-test-run
 rm -f %{buildroot}/usr/share/mysql-test/mtr
 rm -f %{buildroot}/usr/share/mysql/binary-configure
 rm -f %{buildroot}/usr/share/mysql/errmsg-utf8.txt
@@ -26,8 +26,8 @@ rm -f %{buildroot}/usr/share/mysql/magic
 rm -f %{buildroot}/usr/share/mysql/mysql-log-rotate
 rm -f %{buildroot}/usr/share/mysql/mysql*.server
 rm -f %{buildroot}%{_libdir}/mysql/plugin/daemon_example.ini
-ln -sf mysql-test-run.pl %{buildroot}/usr/share/mysql-test/mtr  
-ln -sf mysql-test-run.pl %{buildroot}/usr/share/mysql-test/mysql-test-run 
+ln -sf mysql-test-run.pl %{buildroot}/usr/share/mysql-test/mtr
+ln -sf mysql-test-run.pl %{buildroot}/usr/share/mysql-test/mysql-test-run
 mv %{buildroot}/usr/share/mysql-test/lib/My/SafeProcess/my_safe_process %{buildroot}%{_bindir}
 # generate filelist for binaries and their manpages (easier than enumerating
 # all the binaries and manapages manually, esp. when there are new manpages in
@@ -96,8 +96,6 @@ for i in "${DOCS[@]}"; do
 done
 install -m 755 %_sourcedir/rc.mysql-multi %buildroot/etc/init.d/mysql
 ln -sf ../../etc/init.d/mysql %buildroot/usr/sbin/rcmysql
-# this is used by the init script
-install -m 755 -d %buildroot/var/run/mysql
 # SuSEfirewall service description
 install -D -m 644 %_sourcedir/mysql.SuSEfirewall2 \
 	%buildroot/etc/sysconfig/SuSEfirewall2.d/services/mysql
@@ -138,8 +136,8 @@ done
 rm -rf '%buildroot'/%_libdir/libmysqld.*
 rm -rf '%buildroot'/%_libdir/*.la
 rm -rf '%buildroot'/%_libdir/*.so
-rm -rf '%buildroot'/%_includedir  
-rm -rf '%buildroot'/%_datadir/man/*/mysql_config*  
+rm -rf '%buildroot'/%_includedir
+rm -rf '%buildroot'/%_datadir/man/*/mysql_config*
 rm -rf '%buildroot'/%_datadir/aclocal
 rm -rf '%buildroot'/%_libdir/*.a
 %endif
